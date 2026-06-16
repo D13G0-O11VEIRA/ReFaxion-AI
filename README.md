@@ -158,17 +158,6 @@ https://aistudio.google.com/
 
 ---
 
-## 📈 Possíveis Evoluções
-
-- Login de usuários
-- Banco de dados em nuvem
-- Marketplace de peças reutilizadas
-- Sistema de curtidas e comentários
-- Perfil de usuário
-- Ranking de impacto ambiental
-
----
-
 ## 👥 Equipe
 
 Projeto acadêmico desenvolvido para demonstração de uma solução empreendedora voltada para sustentabilidade e moda circular.
