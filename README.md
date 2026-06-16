@@ -1,4 +1,4 @@
-# ✨ ReFaxion
+# ✨ ReFaxion AI
 
 ## Moda Circular Inteligente com Inteligência Artificial
 
