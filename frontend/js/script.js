@@ -1,4 +1,4 @@
-const API_KEY = "AQ.Ab8RN6I-Tt2MOmunug5y9J_7y7lPdLHWAKySTFA69MIQis3uLg";
+const API_KEY = "COLE_SUA_CHAVE_AQUI";
 
 let ultimaImagem = null;
 let ultimoResultado = null;
