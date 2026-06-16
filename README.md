@@ -28,7 +28,6 @@ O projeto foi desenvolvido como demonstração acadêmica para a disciplina de E
 - JavaScript
 - Google Gemini API
 - LocalStorage
-- GitHub Pages
 
 ---
 
