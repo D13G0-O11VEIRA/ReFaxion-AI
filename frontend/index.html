@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ReFaxion</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="assets/logo.png">
+    
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="brand">
+
+    <img
+        src="assets/logo.png"
+        alt="Logo ReFaxion"
+        class="logo"
+    >
+
+    <div class="brand-text">
+
+        <p class="brand-subtitle">
+            Moda Circular Inteligente
+        </p>
+
+    </div>
+
+</div>
+
+        <button
+            class="community-btn"
+            onclick="window.location.href='feed.html'"
+        >
+            🌎 Comunidade
+        </button>
+
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+
+            <h2>
+                Transforme roupas esquecidas em novas possibilidades
+            </h2>
+
+            <p>
+                A ReFaxion utiliza Inteligência Artificial para sugerir
+                combinações de looks, ideias de reaproveitamento criativo
+                e estimativas de impacto ambiental positivo.
+            </p>
+
+        </section>
+
+        <section class="upload-section">
+
+            <label class="upload-label">
+                📷 Envie uma foto da peça
+            </label>
+
+            <input
+                type="file"
+                id="imagem"
+                accept="image/*"
+            >
+
+            <img
+                id="previewImagem"
+                alt="Prévia da roupa"
+                style="
+                    display:none;
+                    width:100%;
+                    max-height:400px;
+                    object-fit:cover;
+                    border-radius:15px;
+                    margin-top:15px;
+                "
+            >
+
+            <label class="upload-label">
+                📝 Informações adicionais (opcional)
+            </label>
+
+            <textarea
+                id="descricao"
+                placeholder="Exemplo: camiseta preta de algodão, possui pequenos furos nas mangas..."
+            ></textarea>
+
+            <button
+                id="analisarBtn"
+                class="primary-btn"
+            >
+                🔍 Analisar Roupa
+            </button>
+
+        </section>
+
+        <div id="loading"></div>
+
+        <section id="resultado"></section>
+
+        <section
+            id="acoesAnalise"
+            style="display:none;"
+        >
+
+            <button
+                id="compartilharBtn"
+                class="secondary-btn"
+            >
+                📢 Compartilhar na Comunidade
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

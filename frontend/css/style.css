@@ -1,0 +1,383 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#fffeec;
+
+    color:#31261d;
+
+    min-height:100vh;
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.topbar{
+
+    background:#9b76b4;
+
+    color:white;
+
+    padding:20px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.brand h1{
+
+    font-size:32px;
+
+    margin-bottom:5px;
+}
+
+.brand-subtitle{
+
+    font-size:14px;
+
+    opacity:.95;
+}
+
+.community-btn{
+
+    background:#f1c732;
+
+    color:#31261d;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.community-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#e2bb2d;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:30px 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    border:1px solid #dbdbdb;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+    text-align:center;
+}
+
+.hero h2{
+
+    color:#9b76b4;
+
+    margin-bottom:15px;
+
+    font-size:30px;
+}
+
+.hero p{
+
+    line-height:1.7;
+
+    font-size:17px;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.upload-section{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:1px solid #dbdbdb;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.upload-label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+
+    color:#31261d;
+}
+
+input[type="file"]{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #dbdbdb;
+
+    border-radius:12px;
+
+    background:#fafafa;
+}
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    resize:vertical;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #dbdbdb;
+
+    font-size:15px;
+
+    color:#31261d;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.primary-btn{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#6a804a;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.primary-btn:hover{
+
+    background:#586a3d;
+
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#f1c732;
+
+    color:#31261d;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.secondary-btn:hover{
+
+    background:#ddb52a;
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   LOADING
+========================= */
+
+#loading{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#6a804a;
+}
+
+/* =========================
+   RESULTADO IA
+========================= */
+
+#resultado{
+
+    margin-top:30px;
+
+    background:white;
+
+    border:1px solid #dbdbdb;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    line-height:1.8;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+#resultado h2{
+
+    color:#9b76b4;
+
+    margin-top:20px;
+
+    margin-bottom:15px;
+}
+
+#resultado h3{
+
+    color:#6a804a;
+
+    margin-top:15px;
+}
+
+#resultado ul{
+
+    margin-left:20px;
+}
+
+#resultado li{
+
+    margin-bottom:8px;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+#acoesAnalise{
+
+    margin-top:20px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+    .topbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+
+    .hero h2{
+
+        font-size:24px;
+    }
+}
+
+.logo{
+
+    height:90px;
+
+    width:auto;
+
+    object-fit:contain;
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.brand-subtitle{
+
+    color:white;
+
+    font-size:14px;
+
+    margin-top:5px;
+}

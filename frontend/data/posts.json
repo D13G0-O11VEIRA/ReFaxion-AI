@@ -1,0 +1,32 @@
+[
+  {
+    "autor": "Maria",
+    "imagem": "assets/post1.jpg",
+    "texto": "Transformei uma calça jeans antiga em uma bolsa reutilizável. A IA sugeriu o projeto e consegui fazer usando apenas materiais que já tinha em casa."
+  },
+  {
+    "autor": "João",
+    "imagem": "assets/post2.jpg",
+    "texto": "Uma camiseta que estava esquecida virou uma ecobag para compras. Simples, útil e sustentável."
+  },
+  {
+    "autor": "Ana",
+    "imagem": "assets/post3.jpg",
+    "texto": "Usei roupas antigas para criar capas de almofada. O resultado ficou ótimo para decorar a sala."
+  },
+  {
+    "autor": "Lucas",
+    "imagem": "assets/post4.jpg",
+    "texto": "A ReFaxion sugeriu transformar uma camisa em avental. O projeto ficou muito melhor do que eu esperava."
+  },
+  {
+    "autor": "Fernanda",
+    "imagem": "assets/post5.jpg",
+    "texto": "Recebi novas combinações de looks para uma saia que não usava há meses e voltei a utilizá-la."
+  },
+  {
+    "autor": "Gabriel",
+    "imagem": "assets/post6.jpg",
+    "texto": "Transformei uma jaqueta antiga em uma peça personalizada com patches e bordados."
+  }
+]

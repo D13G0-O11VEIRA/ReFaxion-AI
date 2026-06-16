@@ -1,0 +1,334 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#fffeec;
+
+    color:#31261d;
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.topbar{
+
+    background:#9b76b4;
+
+    color:white;
+
+    padding:20px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.brand h1{
+
+    margin-bottom:5px;
+}
+
+.brand-subtitle{
+
+    font-size:14px;
+}
+
+.back-btn{
+
+    background:#f1c732;
+
+    color:#31261d;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.back-btn:hover{
+
+    background:#ddb52a;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:20px;
+}
+
+/* =========================
+   CARD PUBLICAÇÃO
+========================= */
+
+.publicar-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid #dbdbdb;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+}
+
+.publicar-card h2{
+
+    color:#9b76b4;
+
+    margin-bottom:10px;
+}
+
+.publicar-card p{
+
+    margin-bottom:15px;
+}
+
+.publicar-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border-radius:12px;
+
+    border:1px solid #dbdbdb;
+}
+
+.publicar-card textarea{
+
+    width:100%;
+
+    min-height:120px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #dbdbdb;
+
+    resize:vertical;
+
+    margin-bottom:15px;
+}
+
+.publicar-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:#6a804a;
+
+    color:white;
+
+    margin-bottom:10px;
+}
+
+.publicar-card button:hover{
+
+    background:#586a3d;
+}
+
+.danger-btn{
+
+    background:#9b76b4 !important;
+}
+
+.danger-btn:hover{
+
+    background:#8764a0 !important;
+}
+
+/* =========================
+   FEED
+========================= */
+
+.feed-title{
+
+    margin-bottom:20px;
+}
+
+.feed-title h2{
+
+    color:#9b76b4;
+
+    margin-bottom:5px;
+}
+
+#feed{
+
+    column-count:3;
+
+    column-gap:20px;
+}
+
+.card{
+
+    background:white;
+
+    border:1px solid #dbdbdb;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+    break-inside:avoid;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+    transition:.2s;
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+}
+
+.card img{
+
+    width:100%;
+
+    display:block;
+}
+
+.card-content{
+
+    padding:15px;
+}
+
+.card-content h3{
+
+    color:#6a804a;
+
+    margin-bottom:10px;
+}
+
+.card-content p{
+
+    line-height:1.6;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:1000px){
+
+    #feed{
+
+        column-count:2;
+    }
+}
+
+@media(max-width:650px){
+
+    #feed{
+
+        column-count:1;
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+}
+
+/* =========================
+   BOTÃO EXCLUIR POST
+========================= */
+
+.delete-post-btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#f1c732;
+
+    color:#31261d;
+
+    font-weight:bold;
+}
+
+.delete-post-btn:hover{
+
+    background:#ddb52a;
+}
+
+.logo{
+
+    height:80px;
+
+    width:auto;
+
+    object-fit:contain;
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+}
