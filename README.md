@@ -1,4 +1,4 @@
-# ✨ ReFaxion
+# ✨ ReFaxion AI
 
 ## Moda Circular Inteligente com Inteligência Artificial
 
@@ -28,7 +28,6 @@ O projeto foi desenvolvido como demonstração acadêmica para a disciplina de E
 - JavaScript
 - Google Gemini API
 - LocalStorage
-- GitHub Pages
 
 ---
 
@@ -120,23 +119,12 @@ ReFaxion/
 
 ## ⚙️ Como Executar
 
-### Método 1 - VS Code
+### VS Code
 
 1. Abrir a pasta do projeto no VS Code.
 2. Instalar a extensão Live Server.
 3. Abrir o arquivo `index.html`.
 4. Clicar em **Open with Live Server**.
-
----
-
-### Método 2 - GitHub Pages
-
-Após publicar o projeto no GitHub:
-
-1. Acesse Settings.
-2. Abra a seção Pages.
-3. Ative o GitHub Pages.
-4. Utilize o link gerado para acessar o sistema.
 
 ---
 
@@ -167,17 +155,6 @@ https://aistudio.google.com/
 - Comunidades de upcycling
 - Instituições educacionais
 - Projetos de economia circular
-
----
-
-## 📈 Possíveis Evoluções
-
-- Login de usuários
-- Banco de dados em nuvem
-- Marketplace de peças reutilizadas
-- Sistema de curtidas e comentários
-- Perfil de usuário
-- Ranking de impacto ambiental
 
 ---
 
