@@ -1,8 +1,22 @@
+/* ==========================================================
+   ReFaxion - Style.css
+   Parte 1
+   Reset, Body, Topbar, Logo e Botões Superiores
+========================================================== */
+
+/* =========================
+        RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
+/* =========================
+        BODY
+========================= */
 
 body{
 
@@ -13,10 +27,37 @@ body{
     color:#31261d;
 
     min-height:100vh;
+
+    line-height:1.6;
+
 }
 
 /* =========================
-   TOPO
+        LINKS
+========================= */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* =========================
+        IMAGENS
+========================= */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* =========================
+        TOPO
 ========================= */
 
 .topbar{
@@ -25,30 +66,98 @@ body{
 
     color:white;
 
-    padding:20px 30px;
-
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
-    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    padding:18px 30px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
 }
 
-.brand h1{
+/* =========================
+        LOGO
+========================= */
 
-    font-size:32px;
+.logo-area{
 
-    margin-bottom:5px;
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
 }
 
-.brand-subtitle{
+.logo-top{
 
-    font-size:14px;
+    width:auto;
 
-    opacity:.95;
+    height:75px;
+
+    object-fit:contain;
+
 }
+
+/* =========================
+      LADO DIREITO
+========================= */
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+/* =========================
+      NOME DO USUÁRIO
+========================= */
+
+#usuarioNome{
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+}
+
+/* =========================
+        BOTÕES
+========================= */
+
+.community-btn,
+.logout-btn{
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    padding:12px 22px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+/* =========================
+ BOTÃO COMUNIDADE
+========================= */
 
 .community-btn{
 
@@ -56,175 +165,217 @@ body{
 
     color:#31261d;
 
-    border:none;
-
-    border-radius:12px;
-
-    padding:12px 20px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.2s;
 }
 
 .community-btn:hover{
 
+    background:#ddb52a;
+
     transform:translateY(-2px);
 
-    background:#e2bb2d;
 }
 
 /* =========================
-   CONTAINER
+ BOTÃO SAIR
+========================= */
+
+.logout-btn{
+
+    background:#31261d;
+
+    color:white;
+
+}
+
+.logout-btn:hover{
+
+    background:#201913;
+
+    transform:translateY(-2px);
+
+}
+
+/* =========================
+    CONTAINER PRINCIPAL
 ========================= */
 
 .container{
 
-    max-width:1000px;
+    width:min(1000px,92%);
 
-    margin:auto;
+    margin:40px auto;
 
-    padding:30px 20px;
 }
 
 /* =========================
-   HERO
+      TÍTULO PRINCIPAL
 ========================= */
 
-.hero{
+.container h1{
 
-    background:white;
+    font-size:40px;
 
-    padding:30px;
+    color:#31261d;
 
-    border-radius:20px;
+    margin-bottom:12px;
 
-    margin-bottom:25px;
-
-    border:1px solid #dbdbdb;
-
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
-
-    text-align:center;
 }
 
-.hero h2{
+/* =========================
+    PARÁGRAFOS
+========================= */
 
-    color:#9b76b4;
+.container p{
 
-    margin-bottom:15px;
+    font-size:17px;
 
-    font-size:30px;
-}
-
-.hero p{
+    margin-bottom:20px;
 
     line-height:1.7;
 
-    font-size:17px;
 }
+
+/* ==========================================================
+   ReFaxion - Style.css
+   Parte 2
+   Formulário, Upload, Textarea e Botões da IA
+========================================================== */
 
 /* =========================
-   FORMULÁRIO
+      INPUT FILE
 ========================= */
-
-.upload-section{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    border:1px solid #dbdbdb;
-
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
-}
-
-.upload-label{
-
-    display:block;
-
-    margin-top:15px;
-
-    margin-bottom:10px;
-
-    font-weight:bold;
-
-    color:#31261d;
-}
 
 input[type="file"]{
 
     width:100%;
 
-    padding:12px;
+    margin-top:20px;
 
-    border:1px solid #dbdbdb;
+    margin-bottom:20px;
 
-    border-radius:12px;
+    padding:14px;
 
-    background:#fafafa;
+    border:2px dashed #9b76b4;
+
+    border-radius:14px;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
 }
+
+input[type="file"]:hover{
+
+    background:#faf7fc;
+
+}
+
+/* =========================
+        TEXTAREA
+========================= */
 
 textarea{
 
     width:100%;
 
-    min-height:150px;
+    min-height:140px;
 
     resize:vertical;
 
-    padding:15px;
+    padding:16px;
 
-    border-radius:12px;
+    border:2px solid #dbdbdb;
 
-    border:1px solid #dbdbdb;
+    border-radius:14px;
+
+    outline:none;
 
     font-size:15px;
 
+    font-family:inherit;
+
+    margin-bottom:20px;
+
+    transition:.25s;
+
+    background:white;
+
     color:#31261d;
+
+}
+
+textarea:focus{
+
+    border-color:#9b76b4;
+
+    box-shadow:0 0 10px rgba(155,118,180,.25);
+
 }
 
 /* =========================
-   BOTÕES
+      BOTÕES GERAIS
 ========================= */
 
-.primary-btn{
+button{
+
+    font-family:inherit;
+
+}
+
+/* =========================
+ BOTÃO ANALISAR ROUPA
+========================= */
+
+#analisarBtn{
 
     width:100%;
 
-    margin-top:20px;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:12px;
-
-    cursor:pointer;
+    padding:16px;
 
     background:#6a804a;
 
     color:white;
 
-    font-size:18px;
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:17px;
 
     font-weight:bold;
 
-    transition:.2s;
+    transition:.25s;
+
+    margin-bottom:15px;
+
 }
 
-.primary-btn:hover{
+#analisarBtn:hover{
 
-    background:#586a3d;
+    background:#596d3e;
 
     transform:translateY(-2px);
+
 }
 
-.secondary-btn{
+/* =========================
+ BOTÕES APÓS ANÁLISE
+========================= */
+
+#acoesAnalise{
+
+    display:none;
+
+    margin-top:25px;
+
+}
+
+#acoesAnalise button{
 
     width:100%;
 
@@ -232,104 +383,478 @@ textarea{
 
     border:none;
 
-    border-radius:12px;
+    border-radius:14px;
 
     cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+    margin-bottom:15px;
+
+}
+
+/* Compartilhar */
+
+#compartilharBtn{
 
     background:#f1c732;
 
     color:#31261d;
 
-    font-size:18px;
-
-    font-weight:bold;
-
-    transition:.2s;
 }
 
-.secondary-btn:hover{
+#compartilharBtn:hover{
 
     background:#ddb52a;
 
     transform:translateY(-2px);
+
+}
+
+/* Novo botão (caso adicione futuramente) */
+
+#novaAnaliseBtn{
+
+    background:#6a804a;
+
+    color:white;
+
+}
+
+#novaAnaliseBtn:hover{
+
+    background:#586a3d;
+
 }
 
 /* =========================
-   LOADING
+      INPUTS FUTUROS
+========================= */
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+
+    width:100%;
+
+    padding:14px;
+
+    border:2px solid #dbdbdb;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus{
+
+    border-color:#9b76b4;
+
+}
+
+/* =========================
+      PLACEHOLDER
+========================= */
+
+::placeholder{
+
+    color:#888;
+
+}
+
+/* ==========================================================
+   ReFaxion - Style.css
+   Parte 3
+   Preview, Loading e Resultado da IA
+========================================================== */
+
+/* =========================
+      PREVIEW DA IMAGEM
+========================= */
+
+#previewImagem{
+
+    display:none;
+
+    width:100%;
+
+    max-height:420px;
+
+    object-fit:contain;
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+
+    border-radius:16px;
+
+    border:2px solid #dbdbdb;
+
+    background:white;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+/* =========================
+         LOADING
 ========================= */
 
 #loading{
 
     margin-top:25px;
 
+    margin-bottom:20px;
+
     text-align:center;
 
-    font-size:18px;
+    color:#6a804a;
+
+    font-size:20px;
 
     font-weight:bold;
 
-    color:#6a804a;
 }
 
 /* =========================
-   RESULTADO IA
+      RESULTADO IA
 ========================= */
 
 #resultado{
 
-    margin-top:30px;
+    display:block;
+
+    margin-top:25px;
 
     background:white;
 
-    border:1px solid #dbdbdb;
-
     border-radius:20px;
 
-    padding:30px;
+    border:1px solid #dbdbdb;
+
+    padding:35px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 
     line-height:1.8;
 
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
+    word-wrap:break-word;
+
+    overflow-wrap:break-word;
+
+}
+
+/* =========================
+        TÍTULOS
+========================= */
+
+#resultado h1{
+
+    color:#9b76b4;
+
+    margin-bottom:20px;
+
 }
 
 #resultado h2{
 
     color:#9b76b4;
 
-    margin-top:20px;
+    margin-top:30px;
 
     margin-bottom:15px;
+
+    border-bottom:2px solid #f1c732;
+
+    padding-bottom:8px;
+
+}
+
+#resultado h2:first-child{
+
+    margin-top:0;
+
 }
 
 #resultado h3{
 
     color:#6a804a;
 
-    margin-top:15px;
+    margin-top:20px;
+
+    margin-bottom:12px;
+
 }
+
+/* =========================
+          TEXTO
+========================= */
+
+#resultado p{
+
+    margin-bottom:15px;
+
+    text-align:justify;
+
+}
+
+/* =========================
+          LISTAS
+========================= */
 
 #resultado ul{
 
-    margin-left:20px;
+    margin-left:25px;
+
+    margin-bottom:20px;
+
 }
 
 #resultado li{
 
-    margin-bottom:8px;
+    margin-bottom:10px;
+
 }
 
 /* =========================
-   AÇÕES
+          IMAGENS
 ========================= */
 
-#acoesAnalise{
+#resultado img{
 
-    margin-top:20px;
+    max-width:100%;
+
+    border-radius:12px;
+
+    margin:20px 0;
+
 }
 
 /* =========================
-   RESPONSIVO
+        TABELAS
 ========================= */
+
+#resultado table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:20px 0;
+
+}
+
+#resultado table th{
+
+    background:#9b76b4;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+#resultado table td{
+
+    border:1px solid #dbdbdb;
+
+    padding:12px;
+
+}
+
+/* =========================
+       CITAÇÕES
+========================= */
+
+#resultado blockquote{
+
+    border-left:5px solid #9b76b4;
+
+    padding-left:15px;
+
+    margin:20px 0;
+
+    color:#555;
+
+    font-style:italic;
+
+}
+
+/* =========================
+        CÓDIGOS
+========================= */
+
+#resultado code{
+
+    background:#f3f3f3;
+
+    padding:2px 6px;
+
+    border-radius:6px;
+
+    font-family:Consolas, monospace;
+
+}
+
+#resultado pre{
+
+    overflow:auto;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#f3f3f3;
+
+    margin:20px 0;
+
+}
+
+/* ==========================================================
+   ReFaxion - Style.css
+   Parte 4
+   Responsividade, Animações e Ajustes Finais
+========================================================== */
+
+/* =========================
+      ANIMAÇÕES
+========================= */
+
+.container,
+.hero,
+#resultado{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+button{
+
+    transition:
+        background .25s,
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+button:hover{
+
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+/* =========================
+      BARRA DE ROLAGEM
+========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fffeec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#9b76b4;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#87669f;
+
+}
+
+/* =========================
+      SELEÇÃO DE TEXTO
+========================= */
+
+::selection{
+
+    background:#9b76b4;
+
+    color:white;
+
+}
+
+/* =========================
+      LINKS
+========================= */
+
+a{
+
+    color:#6a804a;
+
+    text-decoration:none;
+
+    transition:.2s;
+
+}
+
+a:hover{
+
+    color:#52633a;
+
+    text-decoration:underline;
+
+}
+
+/* =========================
+      RESPONSIVIDADE
+========================= */
+
+@media(max-width:900px){
+
+    .container{
+
+        padding:25px;
+
+    }
+
+}
 
 @media(max-width:768px){
 
@@ -337,47 +862,110 @@ textarea{
 
         flex-direction:column;
 
-        gap:15px;
+        gap:18px;
 
         text-align:center;
+
+        padding:20px;
+
+    }
+
+    .topbar-right{
+
+        justify-content:center;
+
+        width:100%;
+
+    }
+
+    .logo-top{
+
+        height:65px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+    .hero{
+
+        padding:25px;
+
+    }
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    #resultado{
+
+        padding:25px;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    h1{
+
+        font-size:26px;
+
     }
 
     .hero h2{
 
         font-size:24px;
+
     }
+
+    button{
+
+        font-size:15px;
+
+        padding:14px;
+
+    }
+
+    textarea{
+
+        min-height:120px;
+
+    }
+
+    #resultado{
+
+        padding:20px;
+
+    }
+
 }
 
-.logo{
+/* =========================
+      ACESSIBILIDADE
+========================= */
 
-    height:90px;
+button:focus,
+textarea:focus,
+input:focus{
 
-    width:auto;
+    outline:none;
 
-    object-fit:contain;
 }
 
-.brand{
+html{
 
-    display:flex;
+    scroll-behavior:smooth;
 
-    align-items:center;
-
-    gap:15px;
-}
-
-.brand-text{
-
-    display:flex;
-
-    flex-direction:column;
-}
-
-.brand-subtitle{
-
-    color:white;
-
-    font-size:14px;
-
-    margin-top:5px;
 }

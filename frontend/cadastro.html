@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | ReFaxion</title>
+
+    <link rel="icon" href="assets/logo.png">
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/auth.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="login-card">
+
+        <img
+            src="assets/logo.png"
+            class="logo"
+            alt="Logo ReFaxion"
+        >
+
+        <h1>Criar Conta</h1>
+
+        <p>
+
+            Cadastre-se gratuitamente.
+
+        </p>
+
+        <form id="cadastroForm">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome completo"
+                required
+            >
+
+            <input
+                type="email"
+                id="novoEmail"
+                placeholder="E-mail"
+                required
+            >
+
+            <input
+                type="password"
+                id="novaSenha"
+                placeholder="Senha"
+                required
+            >
+
+            <input
+                type="password"
+                id="confirmarSenha"
+                placeholder="Confirmar senha"
+                required
+            >
+
+            <button type="submit">
+
+                Criar Conta
+
+            </button>
+
+        </form>
+
+        <div class="links">
+
+            <p>
+
+                Já possui uma conta?
+
+            </p>
+
+            <a href="login.html">
+
+                Fazer Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/auth.js" defer></script>
+
+<script defer>
+
+redirecionarSeLogado();
+
+</script>
+
+</body>
+
+</html>

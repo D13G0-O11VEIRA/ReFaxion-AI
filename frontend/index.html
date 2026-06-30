@@ -7,128 +7,158 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+        content="width=device-width, initial-scale=1.0">
 
     <title>ReFaxion</title>
 
+    <link rel="icon" href="assets/logo.png">
+
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" href="assets/logo.png">
-    
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        verificarLogin();
+
+    </script>
+
 </head>
 
 <body>
 
-    <header class="topbar">
+<header class="topbar">
 
-        <div class="brand">
+    <div class="logo-area">
 
-    <img
-        src="assets/logo.png"
-        alt="Logo ReFaxion"
-        class="logo"
-    >
-
-    <div class="brand-text">
-
-        <p class="brand-subtitle">
-            Moda Circular Inteligente
-        </p>
+        <img
+            src="assets/logo.png"
+            class="logo-top"
+            alt="Logo ReFaxion"
+        >
 
     </div>
 
-</div>
+    <div class="topbar-right">
+
+        <span id="usuarioNome"></span>
 
         <button
             class="community-btn"
             onclick="window.location.href='feed.html'"
         >
+
             🌎 Comunidade
+
         </button>
 
-    </header>
-
-    <main class="container">
-
-        <section class="hero">
-
-            <h2>
-                Transforme roupas esquecidas em novas possibilidades
-            </h2>
-
-            <p>
-                A ReFaxion utiliza Inteligência Artificial para sugerir
-                combinações de looks, ideias de reaproveitamento criativo
-                e estimativas de impacto ambiental positivo.
-            </p>
-
-        </section>
-
-        <section class="upload-section">
-
-            <label class="upload-label">
-                📷 Envie uma foto da peça
-            </label>
-
-            <input
-                type="file"
-                id="imagem"
-                accept="image/*"
-            >
-
-            <img
-                id="previewImagem"
-                alt="Prévia da roupa"
-                style="
-                    display:none;
-                    width:100%;
-                    max-height:400px;
-                    object-fit:cover;
-                    border-radius:15px;
-                    margin-top:15px;
-                "
-            >
-
-            <label class="upload-label">
-                📝 Informações adicionais (opcional)
-            </label>
-
-            <textarea
-                id="descricao"
-                placeholder="Exemplo: camiseta preta de algodão, possui pequenos furos nas mangas..."
-            ></textarea>
-
-            <button
-                id="analisarBtn"
-                class="primary-btn"
-            >
-                🔍 Analisar Roupa
-            </button>
-
-        </section>
-
-        <div id="loading"></div>
-
-        <section id="resultado"></section>
-
-        <section
-            id="acoesAnalise"
-            style="display:none;"
+        <button
+            class="logout-btn"
+            onclick="logout()"
         >
 
-            <button
-                id="compartilharBtn"
-                class="secondary-btn"
-            >
-                📢 Compartilhar na Comunidade
-            </button>
+            🚪 Sair
 
-        </section>
+        </button>
 
-    </main>
+    </div>
 
-    <script src="js/script.js"></script>
+</header>
+
+<div class="container">
+
+    <h1>
+
+        Bem-vindo ao ReFaxion
+
+    </h1>
+
+    <p id="boasVindas"></p>
+
+    <p>
+
+        Transforme roupas esquecidas em novas possibilidades utilizando Inteligência Artificial.
+
+    </p>
+
+    <input
+        type="file"
+        id="imagem"
+        accept="image/*"
+    >
+
+    <!-- Preview da imagem -->
+
+    <img
+        id="previewImagem"
+        alt="Pré-visualização da roupa"
+        style="
+            display:none;
+            width:100%;
+            max-height:450px;
+            object-fit:contain;
+            margin-top:20px;
+            border-radius:15px;
+            border:1px solid #dbdbdb;
+        "
+    >
+
+    <textarea
+        id="descricao"
+        placeholder="Informações adicionais sobre a roupa (opcional)"
+    ></textarea>
+
+    <button
+        id="analisarBtn"
+        class="primary-btn"
+    >
+
+        🔍 Analisar Roupa
+
+    </button>
+
+    <div id="loading"></div>
+
+    <div id="resultado"></div>
+
+    <!-- Aparece somente após a análise -->
+
+    <div
+        id="acoesAnalise"
+        style="display:none;"
+    >
+
+        <button
+            id="compartilharBtn"
+            class="secondary-btn"
+        >
+
+            🌎 Compartilhar na Comunidade
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+
+    mostrarUsuario();
+
+    const usuario = obterUsuarioLogado();
+
+    if(usuario){
+
+        document
+        .getElementById("boasVindas")
+        .innerHTML =
+        `Olá, <strong>${usuario.nome}</strong> 👋`;
+
+    }
+
+</script>
 
 </body>
 

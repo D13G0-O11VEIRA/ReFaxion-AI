@@ -7,105 +7,148 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Comunidade ReFaxion</title>
+    <title>Comunidade | ReFaxion</title>
+
+    <link rel="icon" href="assets/logo.png">
 
     <link rel="stylesheet" href="css/feed.css">
 
-    <link rel="icon" href="assets/logo.png">
-    
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        verificarLogin();
+
+    </script>
+
 </head>
 
 <body>
 
-    <header class="topbar">
+<header class="topbar">
 
-        <div class="brand">
+    <div class="brand">
 
-    <img
-        src="assets/logo.png"
-        alt="Logo ReFaxion"
-        class="logo"
-    >
+        <img
+            src="assets/logo.png"
+            class="logo"
+            alt="Logo ReFaxion"
+        >
 
-    <div class="brand-text">
+        <div class="brand-text">
 
-        <h2>
-            Comunidade ReFaxion
-        </h2>
+            <h1>ReFaxion</h1>
 
-        <p class="brand-subtitle">
-            Compartilhe suas transformações sustentáveis
-        </p>
+            <span class="brand-subtitle">
+
+                Comunidade sustentável
+
+            </span>
+
+        </div>
 
     </div>
 
-</div>
+    <div class="menu">
+
+        <span id="usuarioNome"></span>
 
         <button
             class="back-btn"
             onclick="window.location.href='index.html'"
         >
-            ← Voltar
+
+            🤖 Voltar para IA
+
         </button>
 
-    </header>
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
 
-    <main>
+            🚪 Sair
 
-        <section class="publicar-card">
+        </button>
 
-            <h2>
-                Compartilhe seu resultado
-            </h2>
+    </div>
 
-            <p>
-                Mostre para a comunidade como você reutilizou sua peça.
-            </p>
+</header>
 
-            <input
-                type="file"
-                id="novaImagem"
-                accept="image/*"
-            >
+<main>
 
-            <textarea
-                id="novoTexto"
-                placeholder="Conte sua experiência..."
-            ></textarea>
+    <!-- ==========================
+         PUBLICAR
+    =========================== -->
 
-            <button onclick="publicar()">
-                Publicar
-            </button>
-<!--
-            <button
-                class="danger-btn"
-                onclick="limparPosts()"
-            >
-                Limpar Posts de Teste
-            </button>
--->
-        </section>
+    <section class="publicar-card">
 
-        <section class="feed-title">
+        <h2>
 
-            <h2>
-                🌎 Inspirações da Comunidade
-            </h2>
+            📢 Compartilhar com a comunidade
 
-            <p>
-                Veja como outras pessoas reaproveitaram suas roupas.
-            </p>
+        </h2>
 
-        </section>
+        <p>
 
-        <div id="feed"></div>
+            Compartilhe sua roupa reaproveitada ou as ideias geradas pela IA.
 
-    </main>
+        </p>
 
-    <script src="js/feed.js"></script>
+        <input
+            type="file"
+            id="novaImagem"
+            accept="image/*"
+        >
+
+        <textarea
+            id="novoTexto"
+            placeholder="Conte sua experiência..."
+        ></textarea>
+
+        <button
+            onclick="publicar()"
+        >
+
+            Publicar
+
+        </button>
+
+    </section>
+
+    <!-- ==========================
+            FEED
+    =========================== -->
+
+    <section class="feed-title">
+
+        <h2>
+
+            🌎 Feed da Comunidade
+
+        </h2>
+
+        <p>
+
+            Inspire-se com outras pessoas.
+
+        </p>
+
+    </section>
+
+    <div id="feed"></div>
+
+</main>
+
+<script src="js/feed.js"></script>
+
+<script>
+
+mostrarUsuario();
+
+</script>
 
 </body>
 

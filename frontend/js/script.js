@@ -1,238 +1,288 @@
 const API_KEY = "COLE_SUA_CHAVE_AQUI";
 
+const usuario = obterUsuarioLogado();
 let ultimaImagem = null;
 let ultimoResultado = null;
 
 /* =========================
-   EVENTOS
+        EVENTOS
 ========================= */
 
-document
-    .getElementById("analisarBtn")
-    .addEventListener("click", analisarRoupa);
+document.addEventListener("DOMContentLoaded", () => {
 
-document
-    .getElementById("compartilharBtn")
-    .addEventListener("click", compartilharNaComunidade);
+    document
+        .getElementById("analisarBtn")
+        ?.addEventListener("click", analisarRoupa);
 
-document
-    .getElementById("imagem")
-    .addEventListener("change", mostrarPreview);
+    document
+        .getElementById("compartilharBtn")
+        ?.addEventListener("click", compartilharNaComunidade);
+
+    document
+        .getElementById("imagem")
+        ?.addEventListener("change", mostrarPreview);
+
+});
 
 /* =========================
-   PREVIEW DA IMAGEM
+      PREVIEW DA IMAGEM
 ========================= */
 
-function mostrarPreview() {
+function mostrarPreview(){
 
     const arquivo =
-        document.getElementById("imagem")
-        .files[0];
+    document
+    .getElementById("imagem")
+    .files[0];
 
-    if (!arquivo) return;
+    if(!arquivo)
+        return;
+
+    ultimaImagem = arquivo;
 
     const reader =
-        new FileReader();
+    new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = function(e){
 
         const preview =
-            document.getElementById(
-                "previewImagem"
-            );
+        document.getElementById(
+            "previewImagem"
+        );
 
         preview.src =
-            e.target.result;
+        e.target.result;
 
         preview.style.display =
-            "block";
+        "block";
+
     };
 
     reader.readAsDataURL(
         arquivo
     );
+
 }
 
 /* =========================
-   ANÁLISE IA
+      ANÁLISE COM IA
 ========================= */
 
-async function analisarRoupa() {
+async function analisarRoupa(){
 
     const arquivo =
-        document.getElementById("imagem")
-        .files[0];
+    document
+    .getElementById("imagem")
+    .files[0];
 
-    if (!arquivo) {
+    if(!arquivo){
 
         alert(
             "Selecione uma imagem."
         );
 
         return;
+
     }
 
     ultimaImagem = arquivo;
 
     const descricao =
-        document.getElementById(
-            "descricao"
-        ).value;
+    document
+    .getElementById("descricao")
+    .value
+    .trim();
 
     const loading =
-        document.getElementById(
-            "loading"
-        );
+    document.getElementById(
+        "loading"
+    );
 
     const resultado =
-        document.getElementById(
-            "resultado"
-        );
+    document.getElementById(
+        "resultado"
+    );
 
     loading.innerHTML =
-        "🔍 ReFaxion AI analisando a peça...";
+    "🔍 A ReFaxion AI está analisando sua roupa...";
 
     resultado.innerHTML = "";
 
-    try {
+    try{
 
         const base64 =
-            await converterBase64(
-                arquivo
-            );
+        await converterBase64(
+            arquivo
+        );
 
         const prompt = `
+
 Você é um especialista em:
 
-- Moda
-- Consultoria de imagem
-- Sustentabilidade
-- Upcycling
-- Economia circular
+• Moda
+• Consultoria de imagem
+• Sustentabilidade
+• Upcycling
+• Economia Circular
 
-Analise a peça enviada.
+Analise cuidadosamente a peça enviada.
 
-Responda SOMENTE em HTML.
+Primeiro descreva brevemente a roupa identificada.
 
-Utilize exatamente esta estrutura:
+Depois responda SOMENTE EM HTML.
+
+Estrutura:
 
 <h2>👕 Looks Recomendados</h2>
 
 Crie 3 looks completos.
 
-Para cada look informe:
+Cada look deve possuir:
 
-<h3>Look 1</h3>
+<h3>Look X</h3>
 
 <ul>
 <li>Parte superior</li>
 <li>Parte inferior</li>
 <li>Calçado</li>
+<li>Acessórios</li>
 <li>Ocasião</li>
 </ul>
 
-Repita para os 3 looks.
-
 <h2>♻️ Ideias de Reaproveitamento</h2>
 
-Crie 5 ideias.
+Crie 5 ideias criativas.
 
-Para cada ideia:
+Cada uma deve conter:
 
-<h3>Nome da Ideia</h3>
+<h3>Nome</h3>
 
 <ul>
 <li>Dificuldade</li>
 <li>Materiais necessários</li>
+<li>Como fazer</li>
 <li>Benefício ambiental</li>
 </ul>
 
 <h2>🌱 Impacto Ambiental Estimado</h2>
 
-Liste:
-
 <ul>
 <li>Água economizada</li>
-<li>Resíduos evitados</li>
-<li>Benefício ambiental geral</li>
+<li>CO₂ evitado</li>
+<li>Redução de resíduos</li>
+<li>Resumo sustentável</li>
 </ul>
 
-Informações adicionais do usuário:
+Informações adicionais fornecidas pelo usuário:
 
 ${descricao}
+
 `;
 
         const resposta =
-            await fetch(
-                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
-                {
-                    method: "POST",
+        await fetch(
 
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
 
-                    body: JSON.stringify({
+            {
 
-                        contents: [
-                            {
-                                parts: [
-                                    {
-                                        text: prompt
-                                    },
+                method:"POST",
 
-                                    {
-                                        inline_data: {
-                                            mime_type:
-                                                arquivo.type,
+                headers:{
 
-                                            data:
-                                                base64
-                                        }
+                    "Content-Type":
+                    "application/json"
+
+                },
+
+                body:JSON.stringify({
+
+                    contents:[
+
+                        {
+
+                            parts:[
+
+                                {
+
+                                    text:prompt
+
+                                },
+
+                                {
+
+                                    inline_data:{
+
+                                        mime_type:
+                                        arquivo.type,
+
+                                        data:
+                                        base64
+
                                     }
-                                ]
-                            }
-                        ]
-                    })
-                }
-            );
+
+                                }
+
+                            ]
+
+                        }
+
+                    ]
+
+                })
+
+            }
+
+        );
 
         const dados =
-            await resposta.json();
+        await resposta.json();
 
         loading.innerHTML = "";
 
-        if (
+        if(
+
             !dados.candidates ||
+
             !dados.candidates[0]
-        ) {
+
+        ){
 
             throw new Error(
-                "Resposta inválida da IA."
+                "Resposta inválida."
             );
+
         }
 
-        const texto =
-            dados.candidates[0]
-                .content.parts[0]
-                .text;
-
         ultimoResultado =
-            texto;
+
+        dados.candidates[0]
+        .content.parts[0]
+        .text;
 
         resultado.innerHTML =
-            texto;
+        ultimoResultado;
 
-        document
-            .getElementById(
-                "acoesAnalise"
-            )
-            .style.display =
+        localStorage.setItem(
+            "resultadoIA",
+            ultimoResultado
+        );
+
+        const painel =
+        document.getElementById(
+            "acoesAnalise"
+        );
+
+        if(painel){
+
+            painel.style.display =
             "block";
 
+        }
+ 
     }
-    catch (erro) {
+
+    catch(erro){
 
         console.error(erro);
 
@@ -240,69 +290,284 @@ ${descricao}
 
         resultado.innerHTML = `
 
-            <h2>❌ Erro</h2>
+<h2>❌ Ocorreu um erro</h2>
 
-            <p>
-                Não foi possível processar a imagem.
-                Verifique sua conexão ou a chave da API.
-            </p>
+<p>
 
-        `;
+Não foi possível concluir a análise.
+
+Verifique:
+
+<ul>
+
+<li>Sua conexão com a internet.</li>
+
+<li>Sua chave da API Gemini.</li>
+
+<li>Se a imagem é válida.</li>
+
+</ul>
+
+</p>
+
+`;
+
     }
+
 }
 
 /* =========================
-   COMPARTILHAR
+      COMPARTILHAR
 ========================= */
 
-function compartilharNaComunidade() {
+async function compartilharNaComunidade(){
 
-    if (!ultimoResultado) {
+    if(!ultimoResultado){
 
         alert(
-            "Faça uma análise primeiro."
+            "Faça uma análise antes de compartilhar."
         );
 
         return;
+
     }
 
-    localStorage.setItem(
-        "resultadoIA",
-        ultimoResultado
-    );
+    if(!ultimaImagem){
 
-    window.location.href =
+        alert(
+            "Nenhuma imagem encontrada."
+        );
+
+        return;
+
+    }
+
+    try{
+
+        const imagemBase64 =
+        await converterImagemDataURL(
+            ultimaImagem
+        );
+
+        const posts =
+        JSON.parse(
+            localStorage.getItem("posts")
+        ) || [];
+
+        posts.unshift({
+
+            autor:
+            usuario
+            ? usuario.nome
+            : "Visitante",
+
+            texto:
+            ultimoResultado
+            .replace(/<[^>]*>/g,"")
+            .substring(0,500),
+
+            imagem:
+            imagemBase64,
+
+            data:
+            new Date()
+            .toLocaleDateString(
+                "pt-BR"
+            )
+
+        });
+
+        localStorage.setItem(
+
+            "posts",
+
+            JSON.stringify(posts)
+
+        );
+
+        alert(
+            "🎉 Publicação compartilhada com sucesso!"
+        );
+
+        window.location.href =
         "feed.html";
+
+    }
+
+    catch(erro){
+
+        console.error(erro);
+
+        alert(
+            "Erro ao compartilhar a publicação."
+        );
+
+    }
+
 }
 
 /* =========================
-   BASE64
+      BASE64 DA API
 ========================= */
 
-function converterBase64(file) {
+function converterBase64(file){
 
     return new Promise(
-        (resolve, reject) => {
+
+        (resolve,reject)=>{
 
             const reader =
-                new FileReader();
+            new FileReader();
 
             reader.readAsDataURL(
                 file
             );
 
-            reader.onload =
-                () => {
+            reader.onload = ()=>{
 
-                    resolve(
-                        reader.result
-                            .split(",")[1]
-                    );
-                };
+                resolve(
+
+                    reader.result
+                    .split(",")[1]
+
+                );
+
+            };
 
             reader.onerror =
-                error =>
-                    reject(error);
+            error=>reject(error);
+
         }
+
     );
+
+}
+
+/* =========================
+     DATAURL DA IMAGEM
+========================= */
+
+function converterImagemDataURL(file){
+
+    return new Promise(
+
+        (resolve,reject)=>{
+
+            const reader =
+            new FileReader();
+
+            reader.onload =
+            function(){
+
+                resolve(
+                    reader.result
+                );
+
+            };
+
+            reader.onerror =
+            reject;
+
+            reader.readAsDataURL(
+                file
+            );
+
+        }
+
+    );
+
+}
+
+/* =========================
+      LIMPAR ANÁLISE
+========================= */
+
+function limparAnalise(){
+
+    document
+    .getElementById(
+        "imagem"
+    )
+    .value = "";
+
+    document
+    .getElementById(
+        "descricao"
+    )
+    .value = "";
+
+    document
+    .getElementById(
+        "resultado"
+    )
+    .innerHTML = "";
+
+    document
+    .getElementById(
+        "loading"
+    )
+    .innerHTML = "";
+
+    const preview =
+    document.getElementById(
+        "previewImagem"
+    );
+
+    if(preview){
+
+        preview.src = "";
+
+        preview.style.display =
+        "none";
+
+    }
+
+    const painel =
+    document.getElementById(
+        "acoesAnalise"
+    );
+
+    if(painel){
+
+        painel.style.display =
+        "none";
+
+    }
+
+    ultimaImagem = null;
+
+    ultimoResultado = null;
+
+}
+
+/* =========================
+      COPIAR RESULTADO
+========================= */
+
+function copiarResultado(){
+
+    if(!ultimoResultado){
+
+        alert(
+            "Nenhum resultado disponível."
+        );
+
+        return;
+
+    }
+
+    const texto =
+    ultimoResultado
+    .replace(/<[^>]*>/g,"");
+
+    navigator.clipboard
+    .writeText(texto)
+    .then(()=>{
+
+        alert(
+            "Resultado copiado!"
+        );
+
+    });
+
 }
