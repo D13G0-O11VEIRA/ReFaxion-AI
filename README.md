@@ -2,49 +2,63 @@
 
 ## Moda Circular Inteligente com Inteligência Artificial
 
-A ReFaxion é uma plataforma desenvolvida para incentivar a sustentabilidade na moda através da Inteligência Artificial.
+O **ReFaxion AI** é uma plataforma web desenvolvida para incentivar a sustentabilidade na moda utilizando Inteligência Artificial. A aplicação permite que o usuário envie uma foto de uma peça de roupa para receber sugestões de reutilização, novos looks e informações sobre o impacto ambiental positivo da reutilização da peça.
 
-O usuário envia uma foto de uma peça de roupa e a IA analisa a imagem para gerar:
-
-- 👕 Sugestões de looks e combinações
-- ♻️ Ideias criativas de reaproveitamento
-- 🌱 Estimativas de impacto ambiental positivo
-- 🌎 Compartilhamento dos resultados em uma comunidade inspiradora
+Além da análise por IA, o projeto possui um sistema de autenticação e uma comunidade onde os usuários podem compartilhar suas ideias.
 
 ---
 
-## 🚀 Objetivo
+# 🚀 Objetivo
 
-Reduzir o descarte de roupas e incentivar a reutilização de peças através de soluções criativas geradas por Inteligência Artificial.
+O projeto foi desenvolvido como demonstração acadêmica para a disciplina de **Empreendedorismo**, unindo tecnologia, sustentabilidade e economia circular.
 
-O projeto foi desenvolvido como demonstração acadêmica para a disciplina de Empreendedorismo, unindo tecnologia, sustentabilidade e economia circular.
+Seu principal objetivo é incentivar a reutilização de roupas, reduzindo o descarte têxtil através de soluções criativas geradas por Inteligência Artificial.
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+# ✨ Funcionalidades
+
+- 🔐 Sistema de Login e Cadastro
+- 👤 Gerenciamento de sessão do usuário
+- 🤖 Análise de roupas utilizando Google Gemini AI
+- 👕 Sugestão automática de looks
+- ♻️ Ideias de reaproveitamento sustentável
+- 🌱 Estimativa de impacto ambiental
+- 🌎 Feed da comunidade
+- 📸 Compartilhamento de publicações
+- 💾 Armazenamento local utilizando LocalStorage
+- 📱 Interface responsiva
+
+---
+
+# 🧠 Tecnologias Utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
 - Google Gemini API
 - LocalStorage
+- Python (servidor local)
 
 ---
 
-## 📸 Funcionalidades
+# 📸 Principais Recursos
 
-### Análise de Roupas com IA
+## 🤖 Análise Inteligente
 
-O usuário envia uma foto da peça e recebe:
+O usuário envia uma imagem da roupa e recebe automaticamente:
 
 - Identificação da peça
-- Sugestões de looks completos
+- Sugestões de looks
 - Ideias de customização
-- Ideias de reaproveitamento sustentável
+- Formas de reaproveitamento
+- Impacto ambiental positivo
 
-### 👗 Sugestão de Looks
+---
 
-A IA gera combinações de roupas compatíveis com a peça enviada.
+## 👕 Sugestão de Looks
+
+A Inteligência Artificial cria combinações completas para diferentes ocasiões.
 
 Exemplos:
 
@@ -55,100 +69,145 @@ Exemplos:
 
 ---
 
-### ♻️ Reaproveitamento Sustentável
+## ♻️ Reutilização Sustentável
 
-A plataforma sugere alternativas para prolongar a vida útil da roupa:
-
-- Ecobags
-- Bolsas
-- Capas de almofada
-- Aventais
-- Customizações criativas
-
----
-
-### 🌱 Impacto Ambiental
-
-A IA apresenta uma estimativa do impacto ambiental positivo gerado pela reutilização da peça.
+A IA propõe diversas formas de reaproveitamento da peça.
 
 Exemplos:
 
-- Redução do descarte têxtil
+- Ecobag
+- Bolsa
+- Capa de almofada
+- Avental
+- Customização
+
+---
+
+## 🌱 Impacto Ambiental
+
+A plataforma apresenta uma estimativa do benefício ambiental da reutilização da roupa, incluindo:
+
 - Economia de água
+- Redução de resíduos têxteis
 - Incentivo à economia circular
 
 ---
 
-### 🌎 Comunidade ReFaxion
+## 🌎 Comunidade
 
-Os usuários podem compartilhar seus resultados e inspirações em um feed semelhante a redes sociais visuais.
+Após realizar uma análise, o usuário pode compartilhar seu resultado com a comunidade.
 
-Funcionalidades:
+Cada publicação contém:
 
-- Publicar imagem
-- Compartilhar experiência
-- Visualizar publicações da comunidade
+- Nome do usuário
+- Imagem enviada
+- Resultado da IA
 
 ---
 
-## 📂 Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
 ```text
-ReFaxion/
+ReFaxion AI/
 │
-├── index.html
-├── feed.html
+├── frontend/
+│   ├── assets/
+│   │
+│   ├── css/
+│   │   ├── style.css
+│   │   ├── feed.css
+│   │   └── login.css
+│   │
+│   ├── data/
+│   │   └── posts.json
+│   │
+│   ├── js/
+│   │   ├── auth.js
+│   │   ├── script.js
+│   │   └── feed.js
+│   │
+│   ├── cadastro.html
+│   ├── login.html
+│   ├── index.html
+│   └── feed.html
 │
-├── css/
-│   ├── style.css
-│   └── feed.css
-│
-├── js/
-│   ├── script.js
-│   └── feed.js
-│
-├── data/
-│   └── posts.json
-│
-├── assets/
-│
-└── README.md
+├── main.py
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## ⚙️ Como Executar
+# ⚙️ Como Executar
 
-### VS Code
+1. Clone ou baixe este repositório.
 
-1. Abrir a pasta do projeto no VS Code.
-2. Instalar a extensão Live Server.
-3. Abrir o arquivo `index.html`.
-4. Clicar em **Open with Live Server**.
+2. Instale o Python (versão 3 ou superior).
+
+3. Obtenha uma chave da API do Google Gemini.
+
+4. No arquivo:
+
+```javascript
+frontend/js/script.js
+```
+
+substitua:
+
+```javascript
+const API_KEY = "COLE_SUA_CHAVE_AQUI";
+```
+
+pela sua chave da API.
+
+5. Execute:
+
+```bash
+python main.py
+```
+
+O navegador será aberto automaticamente em:
+
+```
+http://localhost:8000
+```
 
 ---
 
-## 🔑 Configuração da API Gemini
+# 🔑 API Google Gemini
 
-No arquivo:
+O projeto utiliza a API do **Google Gemini**.
 
-```javascript
-js/script.js
-```
-
-Configure sua chave:
-
-```javascript
-const API_KEY = "SUA_CHAVE_GEMINI";
-```
-
-A chave pode ser obtida em:
+Você pode obter gratuitamente uma chave em:
 
 https://aistudio.google.com/
 
 ---
 
-## 🎯 Público-Alvo
+# 👥 Contas
+
+O sistema possui cadastro de usuários utilizando **LocalStorage**.
+
+As informações ficam armazenadas apenas no navegador utilizado.
+
+---
+
+# 📱 Compatibilidade
+
+O projeto pode ser executado em:
+
+- Windows
+- Linux
+- macOS
+
+Basta possuir:
+
+- Python 3
+- Navegador moderno
+
+---
+
+# 🎯 Público-Alvo
 
 - Pessoas interessadas em moda sustentável
 - Consumidores conscientes
@@ -158,12 +217,12 @@ https://aistudio.google.com/
 
 ---
 
-## 👥 Equipe
+# 📚 Projeto Acadêmico
 
-Projeto acadêmico desenvolvido para demonstração de uma solução empreendedora voltada para sustentabilidade e moda circular.
+Este projeto foi desenvolvido para fins acadêmicos como demonstração de uma solução empreendedora voltada para sustentabilidade, moda circular e utilização de Inteligência Artificial.
 
 ---
 
-## ♻️ ReFaxion
+# ♻️ ReFaxion AI
 
-Transformando roupas esquecidas em novas possibilidades através da Inteligência Artificial.
+**Transformando roupas esquecidas em novas possibilidades através da Inteligência Artificial.**
