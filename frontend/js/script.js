@@ -1,4 +1,6 @@
-const API_KEY = "COLE_SUA_CHAVE_AQUI";
+console.log("SCRIPT NOVO CARREGADO");
+
+const API_KEY = "AQ.Ab8RN6JNLKu7H1pdYjAovx3x0RshBnvrTjVoD2rGgbxJBoiIcA";
 
 const usuario = obterUsuarioLogado();
 let ultimaImagem = null;
