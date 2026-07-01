@@ -1,7 +1,6 @@
 /* =====================================================
    ReFaxion - Login e Cadastro
 ===================================================== */
-
 *{
     margin:0;
     padding:0;
@@ -9,35 +8,22 @@
 }
 
 body{
-
     font-family:Arial, Helvetica, sans-serif;
-
     background:#fffeec;
-
     min-height:100vh;
-
     color:#31261d;
-
 }
 
 /* =====================================================
    Fundo
 ===================================================== */
-
 .background{
-
     width:100%;
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     padding:30px;
-
     background:
 
     linear-gradient(
@@ -46,281 +32,169 @@ body{
         #f8f7ee 45%,
         #f1f0e6 100%
     );
-
 }
 
 /* =====================================================
    Card
 ===================================================== */
-
 .login-card{
-
     width:430px;
-
     max-width:100%;
-
     background:white;
-
     border-radius:22px;
-
     padding:40px;
-
     text-align:center;
-
     border-top:8px solid #9b76b4;
-
     box-shadow:
-
         0 12px 35px rgba(0,0,0,.12);
-
     animation:fade .45s ease;
-
 }
 
 /* =====================================================
    Logo
 ===================================================== */
-
 .logo{
-
     width:170px;
-
     height:auto;
-
     object-fit:contain;
-
     margin-bottom:20px;
-
 }
 
 /* =====================================================
    Títulos
 ===================================================== */
-
 h1{
-
     color:#31261d;
-
     font-size:34px;
-
     margin-bottom:12px;
-
 }
 
 .login-card p{
-
     color:#666;
-
     line-height:1.6;
-
     margin-bottom:28px;
-
 }
 
 /* =====================================================
    Formulário
 ===================================================== */
-
 form{
-
     display:flex;
-
     flex-direction:column;
-
     gap:18px;
-
 }
 
 input{
-
     width:100%;
-
     padding:15px;
-
     border-radius:12px;
-
     border:2px solid #dbdbdb;
-
     outline:none;
-
     font-size:16px;
-
     transition:.25s;
-
     background:white;
-
 }
 
 input::placeholder{
-
     color:#888;
-
 }
 
 input:focus{
-
     border-color:#9b76b4;
-
     box-shadow:
-
     0 0 10px rgba(155,118,180,.30);
-
 }
 
 /* =====================================================
    Botão
 ===================================================== */
-
 button{
-
     width:100%;
-
     padding:16px;
-
     border:none;
-
     border-radius:12px;
-
     cursor:pointer;
-
     background:#6a804a;
-
     color:white;
-
     font-size:18px;
-
     font-weight:bold;
-
     transition:.25s;
-
     box-shadow:
-
     0 5px 12px rgba(106,128,74,.25);
-
 }
 
 button:hover{
-
     background:#5b7040;
-
     transform:translateY(-2px);
-
     box-shadow:
-
     0 8px 18px rgba(106,128,74,.35);
-
 }
 
 button:active{
-
     transform:scale(.98);
-
 }
 
 /* =====================================================
    Links
 ===================================================== */
-
 .links{
-
     margin-top:30px;
-
 }
 
 .links p{
-
     margin-bottom:10px;
-
     color:#666;
-
 }
 
 .links a{
-
     text-decoration:none;
-
     color:#9b76b4;
-
     font-weight:bold;
-
     transition:.25s;
-
 }
 
 .links a:hover{
-
     color:#7e6096;
-
     letter-spacing:.3px;
-
     text-decoration:underline;
-
 }
 
 /* =====================================================
    Seleção de texto
 ===================================================== */
-
 ::selection{
-
     background:#9b76b4;
-
     color:white;
-
 }
 
 /* =====================================================
    Responsividade
 ===================================================== */
-
 @media(max-width:600px){
-
     .background{
-
         padding:20px;
-
     }
-
     .login-card{
-
         padding:30px 22px;
-
     }
-
     .logo{
-
         width:140px;
-
     }
-
     h1{
-
         font-size:28px;
-
     }
-
 }
 
 /* =====================================================
    Animação
 ===================================================== */
-
 @keyframes fade{
-
     from{
-
         opacity:0;
-
         transform:translateY(25px);
-
     }
-
     to{
-
         opacity:1;
-
         transform:translateY(0);
-
     }
-
 }
